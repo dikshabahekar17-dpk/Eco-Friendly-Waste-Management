@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoWaste - Make Earth Green</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5faf5;
+    color: #263b2b;
+}
+
+/* Navigation */
+header {
+    background: white;
+    padding: 18px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px #0002;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #218c4a;
+    font-size: 27px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #263b2b;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #218c4a;
+}
+
+/* Home */
+.hero {
+    min-height: 500px;
+    background:
+    linear-gradient(90deg, #103c24dd, #103c2460),
+    url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #9df3a8;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #218c4a;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #12652f;
+}
+
+/* About */
+.about {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.about h2, .section h2 {
+    font-size: 32px;
+    color: #176b38;
+    margin-bottom: 15px;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 8%;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #65756a;
+}
+
+/* Cards */
+.card-container,
+.recycle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card, .recycle-card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px #0001;
+    transition: 0.3s;
+}
+
+.card:hover, .recycle-card:hover {
+    transform: translateY(-7px);
+}
+
+.card h3, .recycle-card h3 {
+    margin: 15px 0;
+    color: #176b38;
+}
+
+.card p, .recycle-card p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.emoji {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.wet {
+    border-top: 5px solid #299b50;
+}
+
+.dry {
+    border-top: 5px solid #3285c5;
+}
+
+.hazardous {
+    border-top: 5px solid #e5a52e;
+}
+
+.recycling {
+    background: #eaf5eb;
+}
+
+/* Collection Form */
+.collection {
+    background: #f5faf5;
+}
+
+form {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #0001;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd8ce;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: 2px solid #218c4a;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 22px;
+}
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #153e27;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 2;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .card-container,
+    .recycle-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+    form {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+<nav class="navbar">
+    <h2 class="logo">🌱 EcoWaste</h2>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#segregation">Segregation</a></li>
+        <li><a href="#recycling">Recycling</a></li>
+        <li><a href="#collection">Collection</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- Home Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Make Our Planet <span>Clean & Green</span></h1>
+
+        <p>
+        Reduce waste, reuse materials and recycle today
+        for a better and cleaner tomorrow.
+        </p>
+
+        <a href="#collection" class="btn">
+        Request Waste Collection
+        </a>
+    </div>
+</section>
+
+<!-- About -->
+<section class="about">
+    <h2>Why Waste Management Matters?</h2>
+
+    <p>
+    Proper waste management helps reduce pollution,
+    conserve natural resources and protect our environment.
+    Everyone can contribute to making Earth cleaner.
+    </p>
+</section>
+
+<!-- Segregation -->
+<section class="section" id="segregation">
+    <h2 style="text-align:center;">Waste Segregation Guide</h2>
+
+    <p class="subtitle">
+    Separate your waste into different categories.
+    </p>
+
+    <div class="card-container">
+
+        <div class="card wet">
+            <div class="emoji">🍃</div>
+            <h3>Wet Waste</h3>
+            <p>Food leftovers, vegetable peels,
+            fruit waste and garden leaves.</p>
+            <strong>Green Bin</strong>
+        </div>
+
+        <div class="card dry">
+            <div class="emoji">📦</div>
+            <h3>Dry Waste</h3>
+            <p>Paper, cardboard, plastic bottles,
+            metal and glass.</p>
+            <strong>Blue Bin</strong>
+        </div>
+
+        <div class="card hazardous">
+            <div class="emoji">⚠️</div>
+            <h3>Hazardous Waste</h3>
+            <p>Batteries, expired chemicals,
+            paint and electronic waste.</p>
+            <strong>Special Collection</strong>
+        </div>
+
+    </div>
+</section>
+
+<!-- Recycling -->
+<section class="section recycling" id="recycling">
+    <h2 style="text-align:center;">Recycling Information</h2>
+
+    <p class="subtitle">Give waste a second life!</p>
+
+    <div class="recycle-container">
+
+        <div class="recycle-card">
+            <div class="emoji">♻️</div>
+            <h3>Plastic Recycling</h3>
+            <p>Clean and sort recyclable plastic
+            containers before recycling.</p>
+        </div>
+
+        <div class="recycle-card">
+            <div class="emoji">📄</div>
+            <h3>Paper Recycling</h3>
+            <p>Reuse old newspapers, notebooks
+            and cardboard boxes.</p>
+        </div>
+
+        <div class="recycle-card">
+            <div class="emoji">🍂</div>
+            <h3>Composting</h3>
+            <p>Turn suitable kitchen and garden
+            waste into natural compost.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Collection Form -->
+<section class="section collection" id="collection">
+
+    <h2 style="text-align:center;">Request Waste Collection</h2>
+
+    <p class="subtitle">
+    Fill out the form to submit your collection request.
+    </p>
+
+    <form id="wasteForm">
+
+        <label>Full Name</label>
+        <input type="text" id="name"
+        placeholder="Enter your name" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" id="phone"
+        placeholder="Enter 10 digit mobile number"
+        pattern="[0-9]{10}" maxlength="10" required>
+
+        <label>Waste Type</label>
+        <select id="wasteType" required>
+            <option value="">Select Waste Type</option>
+            <option>Wet Waste</option>
+            <option>Dry Waste</option>
+            <option>Hazardous Waste</option>
+            <option>Mixed Waste</option>
+        </select>
+
+        <label>Pickup Address</label>
+        <textarea id="address"
+        placeholder="Enter your complete address"
+        required></textarea>
+
+        <label>Preferred Collection Date</label>
+        <input type="date" id="date" required>
+
+        <button type="submit" class="btn submit-btn">
+        Submit Request
+        </button>
+
+        <p id="message"></p>
+
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h2>🌱 EcoWaste</h2>
+    <p>Small Steps Today, A Greener Tomorrow.</p>
+    <p>© 2026 EcoWaste. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Get form elements
+const form = document.getElementById("wasteForm");
+const message = document.getElementById("message");
+const dateInput = document.getElementById("date");
+
+// Set minimum collection date
+const today = new Date();
+const localToday = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+dateInput.min = localToday;
+
+// Handle form submission
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const wasteType = document.getElementById("wasteType").value;
+    const address = document.getElementById("address").value.trim();
+    const date = dateInput.value;
+
+    // Validate phone number
+    if (!/^[0-9]{10}$/.test(phone)) {
+        message.style.color = "red";
+        message.textContent =
+        "Please enter a valid 10-digit mobile number.";
+        return;
+    }
+
+    // Validate fields
+    if (!name || !wasteType || !address || !date) {
+        message.style.color = "red";
+        message.textContent = "Please fill all the fields.";
+        return;
+    }
+
+    // Show success message
+    message.style.color = "green";
+    message.textContent =
+    "✓ Thank you, " + name +
+    "! Your " + wasteType +
+    " collection request has been submitted successfully.";
+
+    form.reset();
+    dateInput.min = localToday;
+});
+</script>
+
+</body>
+</html>
